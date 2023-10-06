@@ -3,6 +3,16 @@
     src: url(fonts/MEGAN___.TTF);
 }
 
+@font-face {
+    font-family: martian;
+    src: url(fonts/MartianMono-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+    font-family: lexend;
+    src: url(fonts/LexendMega-VariableFont_wght.ttf);
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -23,12 +33,24 @@ body {
     border-right: 2px solid;
     display: grid;
     grid-template: repeat(15, 1fr) / 1fr;
+    min-width: 220px;
+    max-height: 830px;
+    z-index: 2;
+}
+
+#sidebarBack {
+    grid-row: 1 / -1;
+    grid-column: 1;
+    background-color: #97dbf6;
+    border-right: 2px solid;
+    min-width: 220px;
+    z-index: 1;
 }
 
 #header {
     grid-row: 1;
     grid-column: 2;
-    background-color: #daf5f0;
+    background-color: #daf5f5;
     border-bottom: 2px solid;
     display: grid;
     grid-template: 1fr 1fr / 1fr;
@@ -60,7 +82,7 @@ body {
 }
 
 #mainContent {
-    background-color: rgba(198, 239, 225, 0.776);
+    background-color: rgba(198, 229, 239, 0.776);
 }
 
 .logo {
@@ -169,7 +191,6 @@ body {
     grid-column: 1;
     grid-row: 1 / -1;
     justify-self: center;
-    align-self: center;
 }
 
 .headerButtons {
@@ -218,6 +239,7 @@ body {
 .cardContainer > p {
     padding-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
 }
 
 .content {
@@ -225,7 +247,7 @@ body {
     grid-column: 1;
     display: grid;
     gap: 15px 20px;
-    grid-template: repeat(3, 1fr) / 1fr 1fr;
+    grid-template: repeat(3, 1fr) /  repeat(auto-fill, minmax(20rem, 1fr));
 }
 
 .card {
@@ -235,6 +257,52 @@ body {
     background-color: #edf6f4;
     border-radius: 10px;
     box-shadow: 2px 2px black;
+    font-family: martian;
+}
+
+.card > h3,
+.card > p {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.card > p {
+    color: rgb(75, 75, 75);
+}
+
+.card:hover {
+    transition: .3s;
+    transform: skew(-.5deg);
+    box-shadow: 3px 3px black;
+    background-color: #eff9f8;
+}
+
+.announcement1 > h4, 
+.announcement2 > h4,
+.announcement3 > h4 {
+    margin-bottom: 0;
+    margin-top: 15px;
+    font-size: .8em;
+}
+
+.announcement1 > p, 
+.announcement2 > p,
+.announcement3 > p {
+    margin-bottom: 10px;
+    font-size: .65em;
+    color: rgb(75, 75, 75);
+}
+
+.sideContent1 > div {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-family: martian;
+}
+
+.sideContent2 > img {
+    width: 45px;
+    border-radius: 60px;
+    border: 1px solid black;
 }
 
 .mainContentSide {
@@ -253,6 +321,8 @@ body {
     grid-column: 2;
     grid-row: 3;
     margin-left: 60px;
+    margin-bottom: 0;
+    padding-top: 5px;
 }
 .sideContent1 {
     grid-column: 2;
@@ -275,8 +345,59 @@ body {
     background-color: #edf6f4;
     border-radius: 10px;
     box-shadow: 2px 2px black;
+    display: grid;
+    grid-template: repeat(4, 1fr) / 1fr 3fr;
+    font-family: lexend;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
+.trendingPfp1 {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+}
+
+.trendingPfp2 {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    align-self: center;
+}
+
+.trendingPfp3 {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: center;
+    align-self: center;
+}
+
+.trendingPfp4 {
+    grid-column: 1;
+    grid-row: 4;
+    justify-self: center;
+    align-self: center;
+}
+
+.trending1 > h5,
+.trending2 > h5,
+.trending3 > h5,
+.trending4 > h5 {
+    margin: 0;
+    margin-top: 10px;
+    font-size: .65em;
+}
+
+.trending1 > p,
+.trending2 > p,
+.trending3 > p,
+.trending4 > p {
+    margin: 0;
+    margin-top: 5px;
+    font-size: .5em;
+    padding-right: 15px;
+}
 @keyframes hop {
     0% {
         transform: translateY(25px);
